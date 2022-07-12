@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,12 +27,15 @@ namespace DotNetNote
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    //await context.Response.WriteAsync("Hello World!");
+                    context.Response.Headers["Content-Type"] = "text/html; charset = utf - 8";
+                    await context.Response.WriteAsync("Hello World!!!", System.Text.Encoding.UTF8);
                 });
             });
         }
