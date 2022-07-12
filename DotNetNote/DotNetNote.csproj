@@ -8,4 +8,10 @@
     <ProjectReference Include="..\DotNetNote.Models\DotNetNote.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
